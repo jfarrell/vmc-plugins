@@ -138,7 +138,7 @@ module VMCTunnel
       clients = File.expand_path CLIENTS_FILE
       if File.exists? clients
         user = YAML.load_file(clients)
-        @tunnel_clients = deep_merge(stock, user)
+        @tunnel_clients = deep_merge(user, stock)
       else
         @tunnel_clients = stock
       end
